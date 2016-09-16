@@ -25,7 +25,7 @@ public class SalaryHtmlReportNotifier {
         StringBuilder resultingHtml = generateHtml.getStringBuilderHtml(results);
 
         MailService mailService = new MailService();
-        sendMail(recipients, resultingHtml);
+        mailService.sendMail(recipients, resultingHtml);
     }
 
     private void sendMail(String recipients, StringBuilder resultingHtml) {

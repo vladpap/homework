@@ -42,10 +42,10 @@ public class TestSalaryHtmlReportNotifier {
 
         // set up parameters
         SalaryHtmlReportNotifier notificator = new SalaryHtmlReportNotifier(someFakeConnection);
-        LocalDate dateFrom = LocalDate.of(2014, Month.JANUARY, 1);
-        LocalDate dateTo = LocalDate.of(2014, Month.DECEMBER, 31);
+        DateRange dateRange = new DateRange(LocalDate.of(2014, Month.JANUARY, 1),
+                LocalDate.of(2014, Month.DECEMBER, 31));
         // execute
-        notificator.generateAndSendHtmlSalaryReport("10", new DateRange(dateFrom, dateTo), "somebody@gmail.com");
+        notificator.generateAndSendHtmlSalaryReport("10", dateRange, "somebody@gmail.com");
         // verify results
         String expectedReportPath = "src/test/resources/expectedReport.html";
         assertActualReportEqualsTo(mockMimeMessageHelper, expectedReportPath);
