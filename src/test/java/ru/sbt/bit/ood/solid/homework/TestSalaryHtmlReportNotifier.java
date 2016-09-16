@@ -27,7 +27,7 @@ import java.time.LocalDate;
 import java.time.Month;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(SalaryHtmlReportNotifier.class)
+@PrepareForTest(MailService.class)
 public class TestSalaryHtmlReportNotifier {
 
     @Test
