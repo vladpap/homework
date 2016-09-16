@@ -26,7 +26,7 @@ public class MailService {
             // send the message
             mailSender.send(message);
         } catch (MessagingException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }
